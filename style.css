@@ -1,7 +1,10 @@
 html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color:whitesmoke;
   font-family: "Helvetica";
-  background: salmon;
+  background: gray;
   font-size:12px;
 }
 
