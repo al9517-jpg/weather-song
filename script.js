@@ -1,6 +1,5 @@
 //define variable for our location
 let locationField;
-let audioCtx;
 let freq = 0;
 let infoField;
 //wait until html document is loaded so that we can access the keyboard input field
@@ -10,29 +9,14 @@ document.addEventListener('DOMContentLoaded', function(event) {
   infoField = document.getElementById('info');
 })
 
-// create web audio api context
-audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-// create Oscillator node
-const oscillator = audioCtx.createOscillator();
-
-oscillator.type = "square";
-oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime); // value in hertz
-oscillator.connect(audioCtx.destination);
-oscillator.start();
-
 function weather(){
-  console.log(locationField.value);
+  const img = document.getElementById("image");
 
 fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'+locationField.value +'?key=YH5QF5SWJL5LZ8SFPZFT2RCC2')
 	.then(response => response.json())
 	.then(response => {
     const today = response.days[0];
-    freq = today.temp + 50; 
-    console.log(freq - 50); 
-    oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime); 
-    audioCtx.resume();
-    const conditions = today.conditions.toLowerCase()
+    const conditions = today.conditions.toLowerCase();
     infoField.innerHTML = "the weather in " + locationField.value + " is " + response.days[0].temp
     if (response.days[0].temp < 60) {
       infoField.innerHTML += ", which is colder than usual, and the weather is "
@@ -41,38 +25,40 @@ fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/service
       infoField.innerHTML += ", which is warmer than usual, and the weather is "
     }
       if (conditions.includes("snow")) {
+        img.src = "Snow.png";
         infoField.innerHTML += "❄️ Snowy";
       }
       else if (conditions.includes("rain")) {
+        img.src = "Rain.png";
         infoField.innerHTML += "🌧️ Rainy";
       }
       else if (conditions.includes("thunder")) {
+        img.src = "Thunder.png";
         infoField.innerHTML += "⛈️ Thunderstorm";
       }
       else if (conditions.includes("mist") || conditions.includes("fog")) {
+        img.src = "Fog.png";
         infoField.innerHTML += "🌫️ Misty/Foggy";
       }
       else if (conditions.includes("wind")) {
+        img.src = "Wind.png";
         infoField.innerHTML += "💨 Windy";
       }
       else if (conditions.includes("cloud")) {
+        img.src = "Cloud.png";
         infoField.innerHTML += "☁️ Cloudy";
       }
       else if (conditions.includes("clear")) {
+        img.src = "Sun.png";
         infoField.innerHTML += "☀️ Sunny";
       }
       else {
+        img.src = "Droplet.png";
         infoField.innerHTML += "🌤️ " + today.conditions;
       }
   })
 	.catch(err => console.error(err));
 }
-
-function stop(){
-  audioCtx.suspend();
-}
-
-
 
 
 

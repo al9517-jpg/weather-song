@@ -5,13 +5,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <span>Location: <input type="text" id="location" value="pick a place"></span>
-  <button onclick="weather()">weather</button>
-  <button onclick="stop()">stop</button>
-  <p id = "info">
-    Search for a location to "hear" 🔊 it's temperature.
-  </p>
- 
+
+  <div class="top">
+    <span>Location: <input type="text" id="location" value="pick a place"></span>
+    <button onclick="weather()">weather</button>
+    <p id = "info">
+      Search for a location to check it's weather and temperature.
+    </p>
+  </div>
+
+  <div class="bottom">
+    <img id = image src="Droplet.png" alt="Base" width = 1000>
+  </div>
 </body>
 </html>
 

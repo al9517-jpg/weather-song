@@ -1,11 +1,12 @@
 html, body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:whitesmoke;
+  margin: 0;
   font-family: "Helvetica";
-  background: gray;
-  font-size:12px;
+  background:gray;
+  font-size: 12px;
+
+  display: flex;
+  flex-direction: column;   
+  min-height: 100vh; 
 }
 
 button {
@@ -29,4 +30,20 @@ input {
   margin-top:0px;
   padding-top:0px;
   height: 20px;
+}
+
+image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  padding: 20px;
+  text-align: center;
+}
+
+.bottom {
+  text-align: center;
+  padding: 20px;
 }
