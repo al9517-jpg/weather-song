@@ -1,3 +1,6 @@
-# About
-An example of Web Audio API integration with 3rd party APIs—in this case the Visual Crossing Weather API from RapidAPI. See the page at [https://ogbabydiesal.github.io/weather-song/](https://ogbabydiesal.github.io/weather-song/)
+# The Weather Characters !!
+Have you ever wondered what the weather feels like if it was alive?! This website can show a droplet's change when it goes to a different place. Say you want to know what the droplet feels being in Brooklyn. How about China? London? What about the White House? These are all different places in which the lil buddy can change it's appearence
 
+Here are some of these changes:
+
+![This is an alt text.](/image/Markdown-mark.svg "This is a sample image.")
