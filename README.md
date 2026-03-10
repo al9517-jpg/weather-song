@@ -3,7 +3,9 @@ Have you ever wondered what the weather feels like if it was alive?! This websit
 
 Here are some of these changes:
 
-![This is an alt text.](/image/Markdown-mark.svg "This is a sample image.")
+![This is an alt text.](/Screenshot 2026-03-10 at 7.49.16 AM.png)
+![This is an alt text.](/Screenshot 2026-03-10 at 7.49.33 AM.png)
+![This is an alt text.](/Screenshot 2026-03-10 at 7.49.44 AM.png)
 
 **Is there more of these fun characters!!! Let's go searching for these creatures**
 
